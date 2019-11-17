@@ -1,27 +1,27 @@
-
 var start = 0;
 var pos_arr = [];
 function swap(i, j){
-    var divi = document.getElementById("div" + i);
-    var divj = document.getElementById("div" + j);
 
-    var temp_left = divi.offsetLeft;
-    var temp_top = divi.offsetTop;
+    var divi_top = $("#div" + i).css("top");
+    var divi_left = $("#div" + i).css("left");
 
-    divi.style.left = divj.offsetLeft + "px";
-    divi.style.top = divj.offsetTop + "px";
-
-    divj.style.left = temp_left + "px";
-    divj.style.top = temp_top + "px";  
+    $("#div" + i).css({
+        "left": $("#div"+j).css("left"),
+        "top": $("#div"+j).css("top")
+    });
+    
+    $("#div" + j).css({
+        "left": divi_left,
+        "top": divi_top
+    });
 
 }
 
 function setpos(i, j){
-    var divi = document.getElementById("div" + i);
-    var divj = document.getElementById("div" + j);
-
-    divi.style.left = pos_arr[j - 1][0] + "px";
-    divi.style.top = pos_arr[j - 1][1] + "px";
+    $("#div" + i).css({
+        "left": pos_arr[j - 1][0] + "px",
+        "top": pos_arr[j - 1][1] + "px"
+    });
 
 }
 
@@ -44,13 +44,14 @@ function check(){
         if (temp.offsetLeft != pos_arr[i][0] || temp.offsetTop != pos_arr[i][1]) return ;
     }
     alert("You Win!");
-    document.getElementById("button").innerHTML = "开始";}
+    $("#button").val("开始");
+    }
 }
 
 function game_start(){
     start = 1;
     for (var i = 1; i <= 16 ; ++ i){
-        pos_arr.push([document.getElementById("div" + i).offsetLeft,document.getElementById("div" + i).offsetTop]);
+        pos_arr.push([$("#div" + i).position().left,$("#div" + i).position().top]);
     }
 
     var map = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
@@ -63,46 +64,35 @@ function game_start(){
         setpos(i + 1, map[i]);
     }
 
-    for(var i = 0; i < 15 ; ++ i){
-        var temp = document.getElementById("div" + (i + 1));
-        
-        temp.onclick = function(i){
+    $("div").each(function(index, elem){
+        $(elem).on("click", function(index){
             return function(){
                 var div16 = document.getElementById("div" + 16);
             if (((Math.abs(this.offsetLeft - div16.offsetLeft) <= 100) && (Math.abs(this.offsetTop - div16.offsetTop) == 0)) || ((Math.abs(this.offsetTop - div16.offsetTop) <= 100) && ((Math.abs(this.offsetLeft - div16.offsetLeft) == 0)))){
-                swap(i + 1, 16);
+                swap(index + 1, 16);
                 check();
             }}
-        }(i);
-    }
-    document.getElementById("finish").onclick = function(){
+        }(index));
+    });
+
+    $("#finish").on("click", function(){
         for(var i = 0; i < 16; ++ i){
             setpos(i + 1, i + 1);
-            // document.getElementById("div" + (i + 1)).removeEventListener("click");
         }
         start = 0;
-        document.getElementById("button").innerHTML = "开始";
-    }
-
-
-
-    
+        $("#button").text("开始");
+    });
 }
 
 
 window.onload = function(){
-    var button = document.getElementById("button");
-
-    button.onclick = function(){
+    $("#button").on("click", function(){
         if(start == 0){
             game_start();
-            button.innerHTML = "重新开始";
+            $(this).text("重新开始");
         }
         else{
             game_start();
         }
-    };
-
-
-
+    });
 }
