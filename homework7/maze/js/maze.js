@@ -3,8 +3,7 @@ var win = 0;
 var lost = 0;
 var starttt = 0;
 function cheat(){
-    var main = document.getElementById("main");
-    main.onmouseleave = ()=>{alert("Don't cheat!");}
+    $("#main").on("mouseleave", ()=>{alert("Don't cheat!")});
 }
 
 function end(){

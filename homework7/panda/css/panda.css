@@ -1,0 +1,115 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #888888;
+}
+#button, #finish{
+    width: 80px;
+    height: 40px;
+    background-color: #39A2E9;
+    color: white;
+    font-size: 1em;
+    box-shadow: 5px 5px 5px #888888;
+    font-weight: bold;
+    margin-top: 10px;
+}
+main{
+    width: 364px;
+    height: 364px;
+    margin: 0 auto;
+    background-size: 100%;
+    position: relative;
+    border: #39A2E9 solid 2px ;
+}
+main div{
+    width: 88px;
+    height: 88px;
+    background-image: url("../panda.jpg");
+    position: absolute;
+    background-repeat: no-repeat;
+    transition-duration: 0.2s;
+}
+#div1{
+    
+    background-position: 0px 0px;
+    left: 0;
+    top: 0;
+}
+#div2{
+
+    background-position: -88px 0px;
+    left: 92px;
+    top: 0;
+}
+#div3{
+    background-position: -176px 0px;
+    top: 0;
+    left: 184px;
+}
+#div4{
+    background-position: -264px 0px;
+    top: 0;
+    left: 276px;
+}
+#div5{
+    background-position: 0px -88px;
+    top: 92px;
+    left: 0px;
+}
+#div6{
+    background-position: -88px -88px;
+    top: 92px;
+    left: 92px;
+}
+#div7{
+    background-position: -176px -88px;
+    top: 92px;
+    left: 184px;
+}
+#div8{
+    background-position: -264px -88px;
+    top: 92px;
+    left: 276px;
+}
+#div9{
+    background-position: -0px -176px;
+    top: 184px;
+    left: 0;
+}
+#div10{
+    background-position: -88px -176px;
+    top: 184px;
+    left: 92px;
+}
+#div11{
+    background-position: -176px -176px;
+    top: 184px;
+    left: 184px;
+}
+#div12{
+    background-position: -264px -176px;
+    top: 184px;
+    left: 276px;
+}
+#div13{
+    background-position: 0 -264px;
+    top: 276px;
+    left: 0;
+}
+#div14{
+    background-position: -88px -264px;
+    top: 276px;
+    left: 92px;
+}
+#div15{
+    background-position: -176px -264px;
+    top: 276px;
+    left: 184px;
+}
+#div16{
+    background-image: none;
+    top: 276px;
+    left: 276px;
+}
