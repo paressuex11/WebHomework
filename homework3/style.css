@@ -1,0 +1,210 @@
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+html, body {
+    overflow: hidden;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+#at-plus-container {
+    position: relative;
+    width: 200px;
+    /* height: 200px; */
+    /* height: 100%; */
+    bottom: 0px;
+    /* left: 45%;
+    right: 45%; */
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
+#bottom-positioner {
+    position: absolute;
+    bottom: 40px;
+}
+
+#button {
+    padding: 50px 50px;
+    box-sizing: border-box;
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s;
+}
+
+/*infobar 调整*/
+
+#info-bar .info {
+    background-color: gray;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    box-sizing: border-box;
+    opacity: 0;
+    position: absolute;
+    right: 60px;
+    transition: all 0.5s;
+}
+
+/* #info-bar:hover .info {
+    position: absolute;
+    top: 20px;
+    transition: all 1s;
+    opacity: 1;
+    top: 20px;
+} */
+
+.info ul li {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#info-bar img {
+    margin-right: 5px;
+}
+
+#info-bar span {
+    vertical-align: super;
+}
+
+#info-bar .mine {
+    display: inline-block;
+}
+
+.mine span {
+    color: #079E6E;
+}
+
+.comment span {
+    font-size: 1.5em;
+}
+
+/*环形菜单 */
+#control-ring-container{
+  
+    background: black;
+}
+#control-ring-container li{
+    border-radius: 50%;
+    background: grey;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    vertical-align: sub;
+    opacity: 0;
+    transition: all 0.5s;
+}
+/* #control-ring-container .mask {
+    left: -8.25px;
+    bottom: 162.5px;
+} */
+
+/**/
+#button:hover #control-ring-container .mask {
+    transition: all 0.5s;
+    transform: translate(-108.25px,-62.5px);
+    background: url("assets/images/mask.png") ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: gray;
+    /* left: -8.25px;
+    bottom: 162.5px; */
+    opacity: 1;
+}
+
+
+#button:hover #control-ring-container .history {
+    /* left: -25px;
+    bottom: 100px; */
+    transform: translate(-125px, 0px);
+    opacity: 1;
+    transition: all 0.5s;
+    background: url("assets/images/history.png") ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: gray;
+}
+#button:hover #control-ring-container .message {
+    /* left: -8.25px;
+    bottom: 37.5px; */
+    transform: translate(-108.25px, 63.5px);
+    opacity: 1;
+    transition: all 0.5s;
+    background: url("assets/images/message.png") ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: gray;
+}
+#button:hover #control-ring-container .setting {
+    /* left: 37.5px;
+    bottom: -8.25px; */
+    transform: translate(-62.5px, 108.25px);
+    opacity: 1;
+    transition: all 0.5s;
+    background: url("assets/images/setting.png") ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: gray;
+}
+#button:hover #control-ring-container .sign {
+    /* left: 100px;
+    bottom: -25px; */
+    transform: translate(0px, 125px);
+    opacity: 1;
+    transition: all 0.5s;
+    background: url("assets/images/signin.png") ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: gray;
+}
+#button:hover #info-bar .info{
+    opacity: 1;
+    transition:all 0.5s;
+    transform: translate(0px, -150px);
+}
+#button:hover .apb {
+    transition: all 0.5s;
+    background:  url("assets/images/atplus_green.png") ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(48, 63, 159, 1);
+    width: 50px;
+    height: 50px;
+    background-size: 30px 25px;
+
+    /* transform: scale(3); */
+}
+
+.unread{
+    position: absolute;
+    background-color: red;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    left: 24px;
+    bottom: 15px;
+}
+
+/*apb*/
+div.apb{
+    width:30px;
+    height: 30px;
+    position: absolute;
+    border-radius: 50%;
+    text-align: center;
+    /* vertical-align: sub; */
+    right: 100px;
+    bottom: 100px;
+    background: url("assets/images/atplus_white.png") center no-repeat rgba(48, 63, 100, 1);
+    transition: all 0.5s;
+    
+  
+}

@@ -1,0 +1,207 @@
+@keyframes light {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes metro {
+    0% {
+        position: absolute;
+        right: 30px;
+        top: 20px;
+    }
+    50% {
+        transform: scale(2);
+        
+    }
+    100% {
+        transform: translateY(50em);
+        position: absolute;
+        right: 30px;
+        top: 20px;
+    }
+}
+@keyframes metro1 {
+    0% {
+        position: absolute;
+        left: 30px;
+        top: 20px;
+    }
+    50% {
+        transform: scale(2);
+        
+    }
+    100% {
+        transform: translateY(50em);
+        position: absolute;
+        left: 30px;
+        top: 20px;
+    }
+}
+@keyframes metro2 {
+    0% {
+        position: absolute;
+        left: 50px;
+        top: 20px;
+        transform: scale(2);
+    }
+    50% {
+        
+        transform: translateY(25em);
+        
+    }
+    100% {
+        transform: translateY(50em);
+        position: absolute;
+        left: 50px;
+        top: 20px;
+    }
+}
+@keyframes metro3 {
+    0% {
+        position: absolute;
+        right: 50px;
+        top: 20px;
+        transform: scale(2);
+    }
+    50% {
+       
+        transform: translateY(25em);
+        
+    }
+    100% {
+        transform: translateY(50em);
+        position: absolute;
+        right: 50px;
+        top: 20px;
+    }
+}
+@keyframes metro4 {
+    0% {
+        position: absolute;
+        left: 70px;
+        top: 20px;
+    }
+    50% {
+        transform: scale(2);
+        
+    }
+    100% {
+        transform: translateY(50em);
+        position: absolute;
+        left: 70px;
+        top: 20px;
+    }
+}
+@keyframes metro5 {
+    0% {
+        position: absolute;
+        right: 70px;
+        top: 20px;
+    }
+    50% {
+        transform: scale(2);
+        
+    }
+    100% {
+        transform: translateY(50em);
+        position: absolute;
+        right: 70px;
+        top: 20px;
+    }
+}
+
+
+h1 {
+    animation: light 5s;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: x-large;
+    border-radius: 15px;
+    border-width: 2px;
+    border-color: brown;
+    border-style: solid;
+    background-color: antiquewhite;
+}
+
+body {
+    /* background-image: url("image/cake.jpg"); */
+    background-color: #ADB367;
+    z-index: 0;
+    position: relative;
+}
+
+hr {
+    background-image: url("image/pie_icon.gif");
+    background-repeat: repeat-x;
+    opacity: 1;
+    padding-top: 15px;
+}
+
+a {
+    text-align: center;
+}
+
+#grandma {
+    width: 400px;
+    height: 350px;
+}
+
+#pie {
+    width: 300px;
+    height: 300px;
+}
+
+span {
+    font-size: xx-large;
+}
+
+.menu, h1, h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+/* div{
+    margin: 0 auto;
+    width: 600px;
+} */
+
+#cake {
+    /* visibility: hidden; */
+    z-index: 1;
+    animation: metro 5s infinite;
+    position: absolute;
+}
+
+#cake1 {
+    /* visibility: hidden; */
+    z-index: 1;
+    animation: metro1 5s infinite;
+    position: absolute;
+}
+#cake2 {
+    /* visibility: hidden; */
+    z-index: 1;
+    animation: metro2 5s infinite;
+    position: absolute;
+}
+#cake3 {
+    /* visibility: hidden; */
+    z-index: 1;
+    animation: metro3 5s infinite;
+    position: absolute;
+}
+#cake4 {
+    /* visibility: hidden; */
+    z-index: 1;
+    animation: metro4 5s infinite;
+    position: absolute;
+}
+#cake5 {
+    /* visibility: hidden; */
+    z-index: 1;
+    animation: metro5 5s infinite;
+    position: absolute;
+}

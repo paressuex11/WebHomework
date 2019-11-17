@@ -1,0 +1,170 @@
+body{
+    font-size: 8pt;
+    background-image: url("image/background.png");
+    font-family: "Verdana",  "Tahoma", sans-serif;
+    margin: 0%;
+    position: relative;
+}
+#top{
+    background-image: url("image/bannerbackground.png");
+    background-repeat: repeat-x;
+    text-align: center;
+}
+#top img{
+    /* width: 100%; */
+    /* margin: 0%;
+    padding: 0%; */
+    height: 50px;
+}
+h1{
+    font-size: 24px;
+    font-family: Tahoma,Verdana, Geneva, sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+#main{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    border: grey solid 4px;
+    overflow: hidden;
+    position: relative;
+}
+#left{
+    width: 550px;
+    /* position: fixed; */
+    /* float: left; */
+    height: 10%;
+}
+
+
+#left_title{
+    background-image: url("image/rottenbackground.png");
+    background-repeat: repeat-x;
+    height: 83px;
+    vertical-align: super;
+}
+.red_bold{
+    font-size: 48pt;
+    color: red;
+    font-weight: bold;
+}
+.white_char{
+    font-size: 8pt;
+    color: white;
+}
+.title_text{
+    vertical-align: bottom;
+}
+
+
+
+#right{
+    /* overflow: hidden; */
+    width: 250px;
+    background-color: #A2B964;
+    font-size: 8pt;
+    font-family: Arial, sans-serif;
+    float: right;
+ 
+}
+#right_list{
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+#right_list dt{
+    font-weight: bold;
+}
+#right_list dd{
+    margin-bottom: 1em;
+}
+#left_column, #right_column{
+    width: 47%;
+    margin-left: 1%;
+    margin-right: 1%;
+    
+}
+#left_column{
+    float: left;
+}
+#right_column{
+    float: right;
+}
+
+.comment q {
+    font-size: 8pt;
+    font-weight: bold;
+}
+p.comment_p{
+    background-color: #E1D697;
+    border: gray 2px solid;
+    padding: 8px 8px 8px 8px;
+    overflow: hidden;
+}
+.comment_p img{
+    float: left;
+    margin-right: 5px;
+}
+
+div.comment{
+    margin-bottom: 3em;
+}
+
+span.italic{
+    font-style: italic;
+}
+.name_p img{
+    float: left;
+    margin-right: 5px;
+}
+
+p.bottom{
+    background-color: #A2B964;
+    /* float: left; */
+    /* position: absolute; */
+    bottom: 0px;
+    width: 100%;
+    margin: 0%;
+    text-align: center;
+    padding: 5px 5px 5px 5px;
+    /* clear: right; */
+    float: left;
+}
+.html img{
+    float: right;
+    position: fixed;
+    right: 0px;
+    bottom: 30px;
+    border: none;
+}
+.css img{
+    float: right;
+    position: fixed;
+    right: 0;
+    bottom: 0px;
+    border: none;
+}
+/* div.quote img{
+    float: left;
+    margin-right: 5px;
+} */
+
+/* .top > span {
+    position: absolute;
+}
+.critic{
+    font-size: 8px;
+    margin-bottom: 2px;
+}
+span.publication{
+    font-style: italic;
+}
+.critic img{
+    float: left;
+} */
+/* .comment{
+    overflow: hidden;
+    margin-top: 5px;
+} */
+

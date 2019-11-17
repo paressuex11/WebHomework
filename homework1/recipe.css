@@ -1,0 +1,44 @@
+h1, h2 {
+    color: #a4a400;
+    background-color: #F0F0F0;
+    font-family: "Century Gothic", "Futura", "Verdana", "sans-serif";
+    text-decoration: underline;
+    letter-spacing: 0.2em;
+}
+
+h1 {
+    text-align: center;
+    font: 22pt bold;
+}
+
+h2 {
+    text-align: left;
+    font: 18pt normal;
+}
+
+body {
+    background-color: white;
+    color: #404040;
+    font-size: 11pt;
+    font-family: "Georgia", "Garamond", "serif";
+    background-image: url("image/silverware.jpg");
+}
+
+a {
+    color: #a4a400;
+    font-size: 1.5em;
+}
+
+blockquote {
+    white-space: pre-wrap;
+    font-style: italic;
+    background-color: #FFFFC8;
+}
+
+ul li {
+    list-style-image: url("image/pie_icon.gif");
+}
+
+img {
+    border: none;
+}

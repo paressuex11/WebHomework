@@ -1,0 +1,87 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#wallblock{
+    width: 60px;
+    height: 15px;
+    background-color: gray;
+    border: solid 0.5px black;
+    margin: 0 auto;
+}
+#main{
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    width: 70%;
+    height: 60%;
+    background-color: aqua;
+}
+
+#walltop{
+    width: 100%;
+    height: 10%;
+    background-color: gray;
+}
+#wallbottom{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    background-color: gray;
+}
+#wallleft{
+    position: absolute;
+    left: 0;
+    width: 30%;
+    height: 70%;
+    top: 10%;
+    background-color: gray;
+    border-top: none;
+}
+#wallright{
+    position: absolute;
+    right: 0;
+    top: 10%;
+    width: 30%;
+    height: 70%;
+    background-color: gray;
+    border-top: none;
+}
+#wallcenter{
+    position: absolute;
+    bottom: 10%;
+    width: 27.5%;
+    right: 36.25%;
+    height: 70%;
+    background-color: gray;
+}
+#start{
+    position: absolute;
+    background-color: green;
+    bottom: 11%;
+    width: 5%;
+    height: 8%;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+#end{
+    position: absolute;
+    background-color: purple;
+    right: 0;
+    bottom: 11%;
+    width: 5%;
+    height: 8%;
+    font-weight: bold;
+    font-size: 1.5em;
+
+}
+#result{
+    margin-bottom: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+}

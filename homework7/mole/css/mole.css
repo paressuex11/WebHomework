@@ -1,0 +1,40 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.15em;
+}
+
+h4,li{
+    text-align: left;
+}
+div{
+    width: 50%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+input[type="radio"] {
+    margin: 1em;
+    width: 2em;
+    height: 2em;
+    opacity: 0.1;
+}
+
+#gamebutton,#gamestatus{
+    float: left;
+    font-weight: bold;
+}
+div span{
+    float: right;
+}
+
+#time,#score{
+    text-align: right;
+    font-weight: bold;
+    width: 160px;
+}
+
+.mole{
+    opacity: 1; 
+}
