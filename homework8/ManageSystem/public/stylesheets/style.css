@@ -1,0 +1,47 @@
+html,body{
+  width: 100%;
+  height: 100%;
+}
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+form{
+  text-align: center;
+  width: 800px;
+  margin: 0 auto;
+}
+
+h1{
+  text-align: center;
+}
+
+form strong{
+  display: inline-block;
+  width: 400px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 20px;
+  text-align: right;
+}
+form span{
+  display: inline-block;
+  width: 200px;
+  margin-left:1px;
+  margin-right: 0px;
+  font-size: 10px; 
+  font-weight: bold;
+  text-align: left;
+  color: red;
+}
+.validinput{
+  border: green solid 2px;
+  
+}
+.invalidinput{
+  border: red solid 2px;
+}
+a {
+  color: #00B7FF;
+}
+
