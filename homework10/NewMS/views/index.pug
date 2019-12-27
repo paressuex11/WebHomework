@@ -1,5 +1,41 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    link(rel="stylesheet", href="/stylesheets/style.css")
+    script(src="/javascripts/jquery.min.js")
+    
+</head>
+<body>
+    <h1>Welcome to the sign up system</h1>
+    <form action="/" method="post">
+        div
+            strong 用户名：<input type="text" name="username" id="username"   /> 
+            <span></span> 
+        div
+            strong 学号：<input type="text" name="studentID" id="studentID"  />
+            <span></span> 
+        div
+            strong 密码：<input type="text" name="password" id="password"  />
+            span
+        div
+            strong 重复密码：<input type="text" name="re_password" id="re_password"  />
+            span
+         
+        div
+            strong 电话：<input type="text" name="phonenumber" id="phonenumber"   />
+            <span></span> 
+        div
+            strong 电子邮箱：<input type="text" name="email" id="email"   /> 
+            <span></span>
+        
+       
+        <input type="submit" value="提交">
+        <input type="reset" value="重置">
+    </form>
+    script(src="/javascripts/signup.js")
+</body>
+</html>
