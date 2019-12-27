@@ -55,7 +55,30 @@ $(function(){
             $("input").eq(1).attr("success", false);
         }
     });
-    $("input").eq(2).on("change", function (event) {
+    $("input").eq(2).on("change", function(event){
+        if(/^[a-zA-Z0-9-_]{6,12}$/.test($(this).val())){
+            $(this).removeClass("invalidinput").addClass("validinput");
+            $("input").eq(2).attr("success", true);
+        }
+        else{
+            $(this).removeClass("validinput").addClass("invalidinput");
+            $("input").eq(2).attr("success", false);
+            $("span").eq(2).text("密码为6~12位数字、大小写字母、中划线、下划线");
+        }
+    });
+
+    $("input").eq(3).on("change", function(event){
+        if($(this).val() == $("input").eq(2).val()){
+            $(this).removeClass("invalidinput").addClass("validinput");
+            $("input").eq(3).attr("success", true);
+        }else{
+            $(this).removeClass("validinput").addClass("invalidinput");
+            $("input").eq(3).attr("success", false);
+            $("span").eq(3).text("重复密码不一致");
+        }
+    });
+
+    $("input").eq(4).on("change", function (event) {
         if(/^[1-9]\d{10}$/.test($(this).val())){
             $.ajax({
                 url:"/query",
@@ -63,14 +86,14 @@ $(function(){
                 data:{phonenumber:$(this).val()},
                 success:function(data){
                     if(data == "Repeated"){
-                        $("input").eq(2).removeClass("validinput").addClass("invalidinput");
-                        $("span").eq(2).text("电话号码重复");
-                        $("input").eq(2).attr("success", false);
+                        $("input").eq(4).removeClass("validinput").addClass("invalidinput");
+                        $("span").eq(4).text("电话号码重复");
+                        $("input").eq(4).attr("success", false);
                     }
                     else{
-                        $("input").eq(2).removeClass("invalidinput").addClass("validinput");
-                        $("span").eq(2).text("");
-                        $("input").eq(2).attr("success", true);
+                        $("input").eq(4).removeClass("invalidinput").addClass("validinput");
+                        $("span").eq(4).text("");
+                        $("input").eq(4).attr("success", true);
                     }
                 }
             });
@@ -78,11 +101,11 @@ $(function(){
         else{
             $(this).removeClass("validinput").addClass("invalidinput");
             if(/^0/.test($(this).val())) $("span").eq(2).text("不能以0开头");
-            else $("span").eq(2).text("电话11位数字");
-            $("input").eq(2).attr("success", false);
+            else $("span").eq(4).text("电话11位数字");
+            $("input").eq(4).attr("success", false);
         }
     });
-    $("input").eq(3).on("change", function (event) {
+    $("input").eq(5).on("change", function (event) {
         if(/^\w+@\w+\.\w+(\.\w+)*$/.test($(this).val())){
             $.ajax({
                 url:"/query",
@@ -90,33 +113,37 @@ $(function(){
                 data:{email:$(this).val()},
                 success:function(data){
                     if(data == "Repeated"){
-                        $("input").eq(3).removeClass("validinput").addClass("invalidinput");
-                        $("span").eq(3).text("Email重复");
-                        $("input").eq(3).attr("success", false);
+                        $("input").eq(5).removeClass("validinput").addClass("invalidinput");
+                        $("span").eq(5).text("Email重复");
+                        $("input").eq(5).attr("success", false);
                     }
                     else{
-                        $("input").eq(3).removeClass("invalidinput").addClass("validinput");
-                        $("span").eq(3).text("");
-                        $("input").eq(3).attr("success", true);
+                        $("input").eq(5).removeClass("invalidinput").addClass("validinput");
+                        $("span").eq(5).text("");
+                        $("input").eq(5).attr("success", true);
                     }
                 }
             });
         }
         else{
             $(this).removeClass("validinput").addClass("invalidinput");
-            $("input").eq(3).attr("success", false);
-            $("span").eq(3).text("RegEx:/^\\w+@\\w+\\.\\w+(\\.\\w+)*$/");
+            $("input").eq(5).attr("success", false);
+            $("span").eq(5).text("RegEx:/^\\w+@\\w+\\.\\w+(\\.\\w+)*$/");
         }
     });
     $("input[type=submit]").on("click", function(){
         var valid = true;
-        $("input[type=text]").each(function(index, elem){
+        $("input[type=text], input[type=password]").each(function(index, elem){
             if($(elem).attr("success") == "false"){
                 valid = false;
                 return;
             }
         });
-        if(valid) $("form").submit();
+        if(valid) {
+            $("input").eq(2).val(hex_md5($("input").eq(2).val()));
+            $("input").eq(3).val(hex_md5($("input").eq(3).val()));
+            $("form").submit();
+        }
         else return false;
 
     })

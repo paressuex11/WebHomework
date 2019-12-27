@@ -16,6 +16,10 @@ h1{
   text-align: center;
 }
 
+input[type=button]{
+  margin-right: 5px;
+}
+
 form strong{
   display: inline-block;
   width: 400px;
