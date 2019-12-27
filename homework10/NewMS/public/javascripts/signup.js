@@ -59,6 +59,7 @@ $(function(){
         if(/^[a-zA-Z0-9-_]{6,12}$/.test($(this).val())){
             $(this).removeClass("invalidinput").addClass("validinput");
             $("input").eq(2).attr("success", true);
+            $("span").eq(2).text("");
         }
         else{
             $(this).removeClass("validinput").addClass("invalidinput");
@@ -71,6 +72,7 @@ $(function(){
         if($(this).val() == $("input").eq(2).val()){
             $(this).removeClass("invalidinput").addClass("validinput");
             $("input").eq(3).attr("success", true);
+            $("span").eq(3).text("");
         }else{
             $(this).removeClass("validinput").addClass("invalidinput");
             $("input").eq(3).attr("success", false);

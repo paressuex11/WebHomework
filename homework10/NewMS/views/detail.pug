@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Detail</title>
+    script(src="/javascripts/jquery.min.js")
 </head>
 <body>
     <table>
         <tr>
-            th 用户序号
             <th>名字</th>
             <th>学号</th>
             <th>手机</th>
             <th>邮箱</th>
         </tr>
-            td= user.index
             td= user.username
             td= user.studentID
             td= user.phonenumber
             td= user.email
     </table>
+    div(style="color:red;fontsize:2em;")= wrong_mess
+    input(type="button", value="Log Out", Onclick="$.ajax({url:'/quit',success:()=>{window.location='/'}})")
 </body>
 </html>

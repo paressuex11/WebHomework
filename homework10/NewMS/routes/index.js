@@ -1,29 +1,50 @@
 var express = require('express');
 var router = express.Router();
+var session = require("express-session");
+
 
 var db = require("../db");
 
 const fs = require('fs');
 
 /* GET home page. */
-router.get("/", function(req, res, next){
+router.get("/", function (req, res, next) {
 
-  res.render("login")
+  if (req.session.login) {
+    if (req.query.username) {
+      db.User.find({ username: req.session.username }, function (err, ress) {
+        console.log(req.query.username + " " + req.session.username);
+        res.render("detail", { user: ress[0], wrong_mess: req.query.username == req.session.username ? "" : "Don't spy!!" });
+      });
+    }
+    else db.User.find({ username: req.session.username }, function (err, ress) {
+      res.render("detail", { user: ress[0]});
+    });
+  } else res.render("login", { wrong_mess: "" });
 });
 
-router.post("/", function(req, res, next){
+router.post("/", function (req, res, next) {
 
-  var body = req.body;
-  
-  res.render('detail', {user:body});
+  db.User.find(req.body, function (err, ress) {
+    if (ress.length == 0) {
+      res.render("login", { wrong_mess: "Wrong username or password" });
+    }
+    else {
+      req.session.login = true;
+      req.session.username = req.body.username;
+      db.User.find({ username: req.session.username }, function (err, ress) {
+        res.render("detail", { user: ress[0] });
+      });
+    }
+  });
+
 });
 
-router.get('/regist', function(req, res, next) {
-  
+router.get('/regist', function (req, res, next) {
   res.render("index");
 });
 
-router.post('/regist',function(req,res, next) {
+router.post('/regist', function (req, res, next) {
   var body = req.body;
   var user = new db.User({
     username: body.username,
@@ -33,33 +54,33 @@ router.post('/regist',function(req,res, next) {
     phonenumber: body.phonenumber,
     email: body.email
   });
-  user.save(function (err, res) {
-    console.log(res);
+  user.save(function (err, ress) {
+    console.log(ress);
   })
+  req.session.login = true;
+  req.session.username = body.username;
+  res.render("detail", { "user": body });
 
- 
+
+
 });
 
-router.get('/query',function (req,res,next) {
-  for(key in req.query){
-    db.User.find({
-      key:req.query[key]
-    },function(err, res){
-      if(res == []){
-        
-      }
-    });
-  }  
+router.get('/query', function (req, res, next) {
+  db.User.find(req.query, function (err, ress) {
+    if (ress.length == 0) {
+      res.send("Fine");
+    }
+    else {
+      res.send("Repeated");
+    }
+  });
 
+});
 
-  // for (key in req.query){
-  //   for(let user of db.data){
-  //     if(user[key] == req.query[key]){
-  //       res.send("Repeated");
-  //       return;
-  //     }
-  //   }
-  // }
-  // res.send("Fine");
-})
+router.get('/quit', function(req, res, next) {
+  req.session.login = false;
+  req.session.username = undefined;
+  res.send("Bye Bye");
+});
+
 module.exports = router;
